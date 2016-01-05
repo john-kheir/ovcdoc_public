@@ -1,2 +1,1 @@
-# OpenvCloud
-# Public Documentation
+# OpenvCloud Public Documentation
