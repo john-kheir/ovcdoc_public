@@ -24,3 +24,4 @@
    * [Grid Nodes](GridPortal/GridNodes/GridNodes.md)
    * [Status Overview](GridPortal/StatusOverview/StatusOverview.md)
    * [Virtual Machines](GridPortal/VirtualMachines/VirtualMachines.md)
+* [OpenvCloud Authorization Model](Authorization/ovc_authorization.md)
