@@ -25,3 +25,7 @@
    * [Status Overview](GridPortal/StatusOverview/StatusOverview.md)
    * [Virtual Machines](GridPortal/VirtualMachines/VirtualMachines.md)
 * [OpenvCloud Authorization Model](Authorization/ovc_authorization.md)
+* [System Administration](Sysadmin/sysadmin.md)
+   * [Connect to an Environment](Sysadmin/connect.md)
+   * [OpenvCloud File Locations](Sysadmin/file_locations.md)
+   * [Deploy a New Image](Sysadmin/deploy_new_image.md)

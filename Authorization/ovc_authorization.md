@@ -85,7 +85,7 @@
 
 ###Write (RCX):
 
-ALL Read actions of Virtual Machine
+- ALL Read actions of Virtual Machine
 - machine.addDisk()
 - machine.backup()
 - machine.snapshot()
