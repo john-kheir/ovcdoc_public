@@ -1,4 +1,8 @@
-#OpenvCloud Authorization Model
+# End User Portal Authorization Model
+
+In order for a user to have access to the **End User Portal** group membership to system group **user** is required. For more details about group membership, see the **Groups** page in the **Cloud Broker Portal** and the [Groups Documentation](../../CloudBrokerPortal/Groups/Groups.md).
+
+Once access to the **User Portal** actual privileges are determined by the rights granted to user, this at the level of **Accounts**, **Cloud Spaces**, and **Virtual Machines**.
 
 ##Account
 

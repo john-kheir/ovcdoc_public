@@ -26,9 +26,10 @@
    * [Virtual Machines](GridPortal/VirtualMachines/VirtualMachines.md)
 * [End User Portal](EndUserPortal/EndUserPortal.md)
   * [Home](EndUserPortal/Home/Home.md)
+  * [Authorization Model](EndUserPortal/Authorization/AuthorizationModel.md)
   * [Cloud Space Settings](EndUserPortal/CloudSpaceSettings/CloudSpaceSettings.md)
   * [Machines](EndUserPortal/Machines/Machines.md)
-* [OpenvCloud Authorization Model](Authorization/ovc_authorization.md)
+
 * [System Administration](Sysadmin/sysadmin.md)
    * [Connect to an Environment](Sysadmin/connect.md)
    * [OpenvCloud File Locations](Sysadmin/file_locations.md)
