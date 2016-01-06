@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Cloud Broker Portal](CloudBrokerPortal/cloudbroker_portal.md)
+* [Cloud Broker Portal](CloudBrokerPortal/CloudBrokerPortal.md)
    * [Home](CloudBrokerPortal/Home/Home.md)
    * [Accounts](CloudBrokerPortal/Accounts/Accounts.md)
    * [Cloud Spaces](CloudBrokerPortal/CloudSpaces/CloudSpaces.md)
@@ -13,7 +13,7 @@
    * [Stacks](CloudBrokerPortal/Stacks/Stacks.md)
    * [Users](CloudBrokerPortal/Users/Users.md)
    * [Virtual Machines](CloudBrokerPortal/VirtualMachines/VirtualMachines.md)
-* [Grid Portal](GridPortal/grid_portal.md)
+* [Grid Portal](GridPortal/GridPortal.md)
    * [Home](GridPortal/Home/Home.md)
    * [Audits](GridPortal/Audits/Audits.md)
    * [Error Conditions](GridPortal/ErrorConditions/ErrorConditions.md)
@@ -24,6 +24,10 @@
    * [Grid Nodes](GridPortal/GridNodes/GridNodes.md)
    * [Status Overview](GridPortal/StatusOverview/StatusOverview.md)
    * [Virtual Machines](GridPortal/VirtualMachines/VirtualMachines.md)
+* [End User Portal](EndUserPortal/EndUserPortal.md)
+  * [Home](EndUserPortal/Home/Home.md)
+  * [Cloud Space Settings](EndUserPortal/CloudSpaceSettings/CloudSpaceSettings.md)
+  * [Machines](EndUserPortal/Machines/Machines.md)
 * [OpenvCloud Authorization Model](Authorization/ovc_authorization.md)
 * [System Administration](Sysadmin/sysadmin.md)
    * [Connect to an Environment](Sysadmin/connect.md)
