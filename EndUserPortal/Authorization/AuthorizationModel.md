@@ -1,8 +1,8 @@
 # End User Portal Authorization Model
 
-In order for a user to have access to the **End User Portal** group membership to system group **user** is required. For more details about group membership, see the **Groups** page in the **Cloud Broker Portal** and the [Groups Documentation](../../CloudBrokerPortal/Groups/Groups.md).
+In order for a user to have access to the **End User Portal** group membership to the system group **user** is required. For more details about group membership, see the **Groups** page in the **Cloud Broker Portal** and the [Groups Documentation](../../CloudBrokerPortal/Groups/Groups.md).
 
-Once access to the **User Portal** actual privileges are determined by the rights granted to user, this at the level of **Accounts**, **Cloud Spaces**, and **Virtual Machines**.
+Once access to the **End User Portal** actual privileges are determined by the rights (read, write, admin) granted to the user, this at the level of **Accounts**, **Cloud Spaces**, and **Virtual Machines**.
 
 ##Account
 
@@ -15,7 +15,7 @@ Once access to the **User Portal** actual privileges are determined by the right
 
 \+ ALL **Read** actions of **Cloud Space** and **Virtual Machine**
 
-##Write (RCX):
+###Write (RCX):
 
 - ALL **Read** actions of **Account**
 
@@ -24,7 +24,7 @@ Once access to the **User Portal** actual privileges are determined by the right
 
 \+ ALL **Read/Write** actions of **Cloud Space** and **Virtual Machine**
 
-##Admin (ARCXDU):
+###Admin (ARCXDU):
 
 - ALL **Read/Write** actions of **Account**
 - account.addUser()
