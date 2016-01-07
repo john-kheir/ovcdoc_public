@@ -28,4 +28,4 @@ Clicking again the dropdown arrow next to the selection, you can verify that the
 
 ![](MoreCloudSpaces.png)
 
-From here you will want to review/update the settings of your cloud space: [](../CloudSpaceSettings/CloudspaceSettings.md)
+From here you will want to review/update the settings of your cloud space: [](../CloudSpaceSettings/CloudSpaceSettings.md)
