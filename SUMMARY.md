@@ -29,7 +29,9 @@
   * [Authorization Model](EndUserPortal/Authorization/AuthorizationModel.md)
   * [Cloud Space Settings](EndUserPortal/CloudSpaceSettings/CloudSpaceSettings.md)
   * [Machines](EndUserPortal/Machines/Machines.md)
-
+  * [Defense Shield](../DefenseShield/DefenseShield.md)
+  * [Consumption](../Consumption/Consumption.md)
+  * [Machine API](../MachineAPI/MachineAPI.md)
 * [System Administration](Sysadmin/sysadmin.md)
    * [Connect to an Environment](Sysadmin/connect.md)
    * [OpenvCloud File Locations](Sysadmin/file_locations.md)
