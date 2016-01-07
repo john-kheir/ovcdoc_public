@@ -12,13 +12,13 @@ When you click the dropdown arrow next to the selected cloud space a list appear
 
 ![](CloudSpaces.png)
 
-In this example the logged in used has access to three accounts, and within the "Account of Yves" account to 2 distinct cloud spaces.
+In this example the logged in user has access to three accounts, and within the "Account of Yves" account to 2 distinct cloud spaces.
 
 From this dropdown menu the user can also create a new cloud space:
 
 ![](NewCloudSpace.png)
 
-In the **New Cloud Space** dialog window you have indicate in which account you wish to create the new cloud space, give it a name and specify the location where the cloud space needs to be hosted.
+In the **New Cloud Space** dialog window you have to indicate in which account you wish to create the new cloud space, give it a name and specify the location where the cloud space needs to be hosted.
 
 Once the new cloud space got created, the new cloud space will be auto-selected in the top navigation bar:
 
@@ -26,6 +26,6 @@ Once the new cloud space got created, the new cloud space will be auto-selected 
 
 Clicking again the dropdown arrow next to the selection, you can verify that the new cloud space has indeed been created in the specified account, here in the 'Demo Account':
 
-![](CloudSpaces2.png)
+![](MoreCloudSpaces.png)
 
-From here you will want to review/update the settings of your cloud space: ()[../CloudSpaceSettings/CloudspaceSettings.md]
+From here you will want to review/update the settings of your cloud space: [](../CloudSpaceSettings/CloudspaceSettings.md)
