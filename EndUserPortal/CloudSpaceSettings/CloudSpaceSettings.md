@@ -37,9 +37,9 @@ For a general overview of the authorization model, and the exact meaning of "Rea
 
 ## Details
 
-On the **Details** tab the API key is shown and the location:
+On the **Details** tab the API key and the location are shown:
 
-![](CloudSettingsDetails.png)
+![](CloudSpaceSettingsDetails.png)
 
 Clicking the **Delete Cloud Space** button allows you to delete the cloud space:
 
