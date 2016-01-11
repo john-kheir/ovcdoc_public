@@ -34,5 +34,6 @@
   * [Machine API](EndUserPortal/MachineAPI/MachineAPI.md)
 * [System Administration](Sysadmin/sysadmin.md)
    * [Connect to an Environment](Sysadmin/connect.md)
+   * [Preparing for indirect access to ovc_git](Sysadmin/preparing_for_indirect_access.md)
    * [OpenvCloud File Locations](Sysadmin/file_locations.md)
    * [Deploy a New Image](Sysadmin/deploy_new_image.md)
