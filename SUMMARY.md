@@ -36,4 +36,5 @@
    * [Connect to an Environment](Sysadmin/connect.md)
    * [Preparing for indirect access to ovc_git](Sysadmin/preparing_for_indirect_access.md)
    * [OpenvCloud File Locations](Sysadmin/file_locations.md)
+   * [How to customize the body of the resend password e-mail](Sysadmin/customize_reset_password_email.md)
    * [Deploy a New Image](Sysadmin/deploy_new_image.md)

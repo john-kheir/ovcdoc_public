@@ -6,4 +6,6 @@
 
 [OpenvCloud File Locations](file_locations.md)
 
+[How to customize the body of the resend password e-mail](customize_reset_password_email.md)
+
 [Deploy a New Image](deploy_new_image.md)
