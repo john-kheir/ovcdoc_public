@@ -105,3 +105,13 @@ vi ~/.gitconfig
 	name = Yves Kerwyn
 	email = yves.kerwyn@greenitglobe.com
 ```
+
+You're ready now to connect to an OpenvCloud environment over SSH, just remember to use the -A option in order to have the ssh agent forwarding to work:
+```
+ssh -A -p $port$ root@$ip-address
+```
+
+In order to verify that the ssh agent forwarding works, make sure that the following command shows the same key when running on your personal (local) machine and the remote machine:
+```
+ssh-add -l
+```
