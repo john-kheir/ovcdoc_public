@@ -16,9 +16,67 @@ For each image there is a directory under `/opt/code/git/openvcloudEnvironments/
 Below we start from the image directory for Ubuntu 14.04 (64 bit):
 
 ```
-cd openvcloud_ays
-cp -rf image_ubuntu-1404-x64 image_windows2012
-cd image_windows2012
+cd /opt/code/git/openvcloudEnvironments/$name-of-your-env$/servicetemplates
+```
+
+Let's use this image:
+https://cloud-images.ubuntu.com/wily/current/wily-server-cloudimg-amd64-uefi1.img
+
+```
+mkdir image_wily-server
+```
+
+```
+vi service.hrd
+```
+
+```
+platform.supported             = 'generic'
+
+web.export.1                   =
+    checkmd5:'false',
+    dest:'/opt/jumpscale7/var/tmp/templates/willy-server-cloudimg-amd64-uefi1.qcow2',
+    source:'/wily/current/wily-server-cloudimg-amd64-uefi1.img',
+    url:'https://cloud-images.ubuntu.com',
+```
+
+```
+vi actions.py
+```
+
+
+```
+from JumpScale import j
+
+ActionsBase=j.atyourservice.getActionsBaseClass()
+
+class Actions(ActionsBase):
+    """
+    process for install
+    -------------------
+    step1: prepare actions
+    step2: check_requirements action
+    step3: download files & copy on right location (hrd info is used)
+    step4: configure action
+    step5: check_uptime_local to see if process stops  (uses timeout $process.stop.timeout)
+    step5b: if check uptime was true will do stop action and retry the check_uptime_local check
+    step5c: if check uptime was true even after stop will do halt action and retry the check_uptime_local check
+    step6: use the info in the hrd to start the application
+    step7: do check_uptime_local to see if process starts
+    step7b: do monitor_local to see if package healthy installed & running
+    step7c: do monitor_remote to see if package healthy installed & running, but this time test is done from central location
+    """
+
+
+    def configure(self, serviceObj):
+        from CloudscalerLibcloud.imageutil import registerImage
+        name = 'Wily Server 15.10 amd64'
+        imagename = 'willy-server-cloudimg-amd64-uefi1.qcow2'
+        registerImage(serviceObj, name, imagename, 'Linux', 10)
+```
+
+```
+vi instance.hrd
 ```
 
 Each directory contains 3 files:
@@ -44,32 +102,45 @@ Each directory contains 3 files:
 ## Save, commit and push your changes to the repo
 
 ```
-git commit
+git add image_wily-server
+git commit -m "new image"
 git push
+```
+
+Not used:
+```
+git config --global push.default simple
 ```
 
 ## Install the image
 
 Open an SSH session on the ovc_git machine.
 
+OLD/DON'T USE:
 Update the AYS metadata on ovc_git, which will fetch the newly created the HRD files:
 ```
 ays mdupdate
 ```
 
-@todo we need to review the git repo address, needs to be specific per partner/customer
+Instead, manually update the repo:
+```
+git pull
+```
+
 
 Go to the cloned environment repo on ovc_git, for instance for environment 'du-conv-2':
 ```
-cd /opt/code/git/openvcloudEnvironments/du-conv-2
+cd /opt/code/git/openvcloudEnvironments/$name-of-your-env$/servicetemplates
 ```
 
-And finally install the image:
+And finally install the image, make sure to specify the name of node:
 ```
-ays install -n image_windows2012 --targettype node.ssh --targetname du-conv-2-02
+ays install -n image_wily-server --targettype node.ssh --targetname $name-of-a-node-in-your-env$
 ```
 
+(ays install -n image_wily-server --targettype node.ssh --targetname be-scale-1-01)
 
+OLD, skip:
 ## Sync your image
 
 In the **Cloud Broker Portal** go to the **Location Details** page for your location, and choose **Sync Available Images to Cloud Broker** from the **Actions** menu:

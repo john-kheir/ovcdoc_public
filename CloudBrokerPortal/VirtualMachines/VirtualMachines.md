@@ -27,17 +27,17 @@ This table lists the virtual network interface cards (NIC) in the virtual machin
 
 In the **Disks** table all the virtual disks attached to the virtual machine are listed:
 
-![[]](Disks.png)
+![](Disks.png)
 
 With the **+ Create Disks** link you can easily add disks:
 
-![[]](AddDisk.png)
+![](AddDisk.png)
 
 #### Snapshots
 
 Here all the snapshots are listed:
 
-![[]](Snapshots.png)
+![](Snapshots.png)
 
 Creating snapshots is straight forward, and rolling back or deleting a snapshot is done by clicking on one of the icons in the **Actions** column.
 
@@ -46,25 +46,21 @@ Creating snapshots is straight forward, and rolling back or deleting a snapshot 
 
 Here all port forwardings are listed:
 
-![[]](PortForwardings2.png)
+![](PortForwardings2.png)
 
 Adding more port forwardings and removing existing ones is easy.
 
-
-#### Machine Exports
-
-@TODO didn't work
 
 #### Jobs
 
 This table lists all jobs executed on the virtual machine, and the results:
 
-![[]](Jobs.png)
+![](Jobs.png)
 
 When clicking on the time stamp, you'll see the **Job Details**:
 
-![[]](JobDetails.png)
+![](JobDetails.png)
 
 Most interesting here is the **Result** section where you see a backtrack:
 
-![[]](Result.png)
+![](Result.png)
