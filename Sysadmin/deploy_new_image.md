@@ -53,7 +53,7 @@ platform.supported             = 'generic'
 
 web.export.1                   =
     checkmd5:'false',
-    dest:'/opt/jumpscale7/var/tmp/templates/willy-server-cloudimg-amd64-uefi1.qcow2',
+    dest:'/opt/jumpscale7/var/tmp/templates/wily-server-cloudimg-amd64-uefi1.qcow2',
     source:'/wily/current/wily-server-cloudimg-amd64-uefi1.img',
     url:'https://cloud-images.ubuntu.com',
 ```
@@ -92,7 +92,7 @@ class Actions(ActionsBase):
     def configure(self, serviceObj):
         from CloudscalerLibcloud.imageutil import registerImage
         name = 'Wily Server 15.10 amd64'
-        imagename = 'willy-server-cloudimg-amd64-uefi1.qcow2'
+        imagename = 'wily-server-cloudimg-amd64-uefi1.qcow2'
         registerImage(serviceObj, name, imagename, 'Linux', 10)
 ```
 
