@@ -44,9 +44,73 @@ Make sure the cloned keys file is protected, not accessible to other users, it s
 chmod 600 be-scale-1/keys/git_root
 ```
 
-In order to connect to `ovc_git`, using the git_root identity file (-i) for this environment, in this example for "be-scale-1":
+In order to connect to `ovc_git`, using the git_root identity file (-i) for this environment:
 ```
-ssh be-scale-1.demo.greenitglobe.com -l root -i be-scale-1/keys/git_root
+ssh $ip-address-of-your-master-cloud-space$ -l root -i /opt/code/git/openvcloudEnvironments/$name-of-your-env$/keys/git_root
 
 root@ovcgit:~#
+```
+
+## Accessing ovc_master from ovc_git
+
+The public IP address of ovc_master can be found on ovc_git in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__ovc_master`.
+
+For instance for an environment with the name `poc`:
+```
+cd /opt/code/git/openvcloudEnvironments/poc/services/jumpscale__node.ssh__ovc_master
+cat service.hrd
+instance.ip                    = '172.17.0.4'
+instance.jumpscale             = 'False'
+instance.login                 = 'root'
+instance.password              =
+instance.publicip              = '10.54.16.7'
+instance.ssh.port              = '22'
+instance.ssh.publicport        = '9022'
+instance.ssh.shell             = '/bin/bash -l -c'
+instance.sshkey                = 'ovc_master'
+
+#optional category of service, default = app
+service.category               = 'node'
+service.description            = 'is a node running linux os'
+service.domain                 = 'jumpscale'
+service.installed.checksum     = '85a4417a78f8acd43669a1f479bb17b0'
+service.instance               = 'ovc_master'
+service.name                   = 'node.ssh'root@anotherubuntuserver:/opt/code/git/openvcloudEnvironments/poc/services/jumpscale__node.ssh__ovc_master#
+```
+
+The ip address next to `instance.ip` is the one you need, in the above example 172.17.0.4.
+
+Connecting to ovc_master from ovc_git is simple then:
+```
+ssh 172.17.0.4
+```
+
+### Accessing physical nodes from ovc_git
+
+Also the ip address of the physical nodes can be found on ovc_git in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__$name-of-physical-node$/service.hrd`.
+
+For instance for an physical node with the name `be-scale-1-01` in an environment with name `be-scale-1`:
+```
+cd /opt/code/git/openvcloudEnvironments/be-scale-1/services/jumpscale__node.ssh__be-scale-1-01
+cat service.hrd
+instance.ip                    = '192.168.103.218'
+instance.jumpscale             = 'False'
+instance.login                 = 'root'
+instance.password              =
+instance.ssh.port              = '21001'
+instance.ssh.shell             = '/bin/bash -l -c'
+instance.sshkey                = 'nodes'
+
+#optional category of service, default = app
+service.category               = 'node'
+service.description            = 'is a node running linux os'
+service.domain                 = 'jumpscale'
+service.installed.checksum     = '85a4417a78f8acd43669a1f479bb17b0'
+service.instance               = 'be-scale-1-01'
+service.name                   = 'node.ssh'root@ovcgit:/opt/code/git/openvcloudEnvironments/be-scale-1/services/jumpscale__node.ssh__be-scale-1-01#
+```
+
+Once you've looked up this ip address, connecting is simple:
+```
+ssh $ip-addres-of-phyical-node$
 ```
