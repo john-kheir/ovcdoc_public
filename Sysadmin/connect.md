@@ -44,10 +44,28 @@ Make sure the cloned keys file is protected, not accessible to other users, it s
 chmod 600 be-scale-1/keys/git_root
 ```
 
+So you have the keys, the ip address can (sometimes) be found in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__docker_client__main`.
+
+Sometimes, since this address could be different, in that case you will need to contact the administrator.
+
+For instance for an environment with the name `poc`:
+```
+cd /opt/code/git/openvcloudEnvironments/poc/services/jumpscale__docker_client__main
+cat service.hrd
+instance.image.base            = 'openvcloud/2016-01-07'
+instance.public.address        = '10.54.16.7'
+instance.remote.host           = '172.17.0.1'
+instance.remote.port           = '2375'
+
+service.domain                 = 'jumpscale'
+service.installed.checksum     = '144240a95f6e30ecaa387133a3a6d2d4'
+service.instance               = 'main'
+service.name                   = 'docker_client'
+```
+
 In order to connect to `ovc_git`, using the git_root identity file (-i) for this environment:
 ```
-ssh $ip-address-of-your-master-cloud-space$ -l root -i /opt/code/git/openvcloudEnvironments/$name-of-your-env$/keys/git_root
-
+ssh 10.54.16.7 -l root -p 2202 -i /opt/code/git/openvcloudEnvironments/poc/keys/git_root
 root@ovcgit:~#
 ```
 
@@ -110,7 +128,7 @@ service.instance               = 'be-scale-1-01'
 service.name                   = 'node.ssh'root@ovcgit:/opt/code/git/openvcloudEnvironments/be-scale-1/services/jumpscale__node.ssh__be-scale-1-01#
 ```
 
-Once you've looked up this ip address, connecting is simple:
+Connecting from ovc_git to physical node be-scale-1-01 is as simple as:
 ```
-ssh $ip-addres-of-phyical-node$
+ssh 192.168.103.218
 ```

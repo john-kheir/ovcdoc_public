@@ -2,11 +2,11 @@
 
 On the **Virtual Machines** page all virtual machines are listed:
 
-![[]](VirtualMachines.png)
+![](VirtualMachines.png)
 
 From here you can go to the **Virtual Machine Details** page for a virtual machine you select by its name.
 
-![[]](VirtualMachineDetails.png)
+![](VirtualMachineDetails.png)
 
 From the **Actions** dropdown menu you can:
 - Start, stop, pause and delete a virtual machine
@@ -21,7 +21,7 @@ From the **Actions** dropdown menu you can:
 
 This table lists the virtual network interface cards (NIC) in the virtual machine, showing the MAC addresses and IP address on the private network:
 
-![[]](NIC.png)
+![](NIC.png)
 
 #### Disks
 
