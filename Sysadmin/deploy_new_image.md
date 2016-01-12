@@ -1,17 +1,17 @@
 # How to deploy a new OS image
 
-## Clone the OpenvCloud AYS repository
+## Clone the repository of your environment
 
-@todo we need to review repo since we still use a common repository for all installations...
+The image templates are under `https://git.aydo.com/openvcloudEnvironments/$name-of-your-env$/tree/master/servicetemplates`
 
-From a well prepared computer, as documented [here](preparing_for_indirect_access.md), clone the openvcloud_ays.git repository:
+From a well prepared computer, as documented [here](preparing_for_indirect_access.md), your first step will be to clone the repository of your environment from AYDO to your local (virtual) machine:
 ```
-git clone https://git.aydo.com/0-complexity/openvcloud_ays.git
+git clone https://git.aydo.com/openvcloudEnvironments/$name-of-your-env$
 ```
 
 ## Create a new image directory
 
-For each image there is a directory in this repo. In order to create a new image it is best to start from a copy of any of the existing AYS image directories, and name the new directory to your new image.
+For each image there is a directory under `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/servicetemplates`. In order to create a new image it is best to start from a copy of any of the existing AYS image directories, and name the new directory to your new image.
 
 Below we start from the image directory for Ubuntu 14.04 (64 bit):
 
