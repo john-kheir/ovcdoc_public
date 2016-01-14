@@ -2,24 +2,25 @@
 
 ## Introduction
 
-The core of an OpenvCloud environment is the master cloud space, which consist of the following docker containers:
-- ovc_git
-- ovc_master
-- ovc_proxy
-- ovc_dcpm
+![](AdminArchitecture.png)
 
-The master cloud space and its containers can run locally, close to the actual OpenvCloud environment it controls or remotely, for instance in another OpenvCloud environment, such as at mothership1.com.
+The core of an OpenvCloud environment is the **master cloud space**, which consist of the following docker containers:
+- ovc_git - holding all configuration of your environment
+- ovc_master - controlling the environment based on information from ovc_git
+- ovc_proxy - runs nginx as a proxy for all port 80 and port 443 communications
+
+The master cloud space and its containers can run locally, close to the actual OpenvCloud physical nodes it controls or remotely, for instance in another OpenvCloud environment, such as at mothership1.com.
 
 When installed locally, Green IT Globe typically uses the [Shuttle XPC nano NC01U5](http://www.shuttle.eu/products/nano/nc01u5/) Mini-PC.
 
 For each environment managed by Green IT Globe a master git repository is maintained at https://git.aydo.com/ ("AYDO"). The git repository for the environment "be-scale-1" for instance is available at https://git.aydo.com/openvcloudEnvironments/be-scale-1. Access is of course restricted.
 
-On the ovc_git docker container of your environment this git repository is cloned, holding all configuration information, including all the keys in order to access all other docker containers of the master cloud space of your OpenvCloud environment.
+On the ovc_git docker container of your environment this git repository is cloned fron the central git environment at AYDO, holding all configuration information, including all the keys in order to access all other docker containers of the master cloud space of your OpenvCloud environment.
 
-So in order to access you OpenvCloud environment you hve two options, get direct or indirect access to the git repository:
+So in order to access you OpenvCloud environment you have two options, get direct or indirect access to the git repository:
 
 - Direct access requires that you know the credentials for opening an SSH connection to ovc_git
-- Indirect access requires that have the AYDO credentials in order to first clone the git repository of your environment, in order get to the the keys to access ovc_git and all other docker containers
+- Indirect access (recommended) requires that have the AYDO credentials in order to first clone the git repository of your local machine, in order get to the the keys to access ovc_git and all other docker containers, and update the configuration, which you will be pushing back to the central repository at AYDO, from where they get in turn pulled to ovc_git.
 
 
 ## Accessing ovc_git indirectly
@@ -44,11 +45,11 @@ Make sure the cloned keys file is protected, not accessible to other users, it s
 chmod 600 be-scale-1/keys/git_root
 ```
 
-So you have the keys, the ip address can (sometimes) be found in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__docker_client__main`.
+So you have the keys, the ip address (instance.public.address) is often (but not allways) the same as the one that can be found in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__docker_client__main`.
 
-Sometimes, since this address could be different, in that case you will need to contact the administrator.
+Since this address could be different, it's recommended to check with the administrator.
 
-For instance for an environment with the name `poc`:
+So, for instance for an environment with the name `poc`:
 ```
 cd /opt/code/git/openvcloudEnvironments/poc/services/jumpscale__docker_client__main
 cat service.hrd
@@ -63,15 +64,16 @@ service.instance               = 'main'
 service.name                   = 'docker_client'
 ```
 
-In order to connect to `ovc_git`, using the git_root identity file (-i) for this environment:
+In order to connect to `ovc_git`, using the git_root identity file (-i) for this environment, and including the -A option (best practice):
 ```
-ssh 10.54.16.7 -l root -p 2202 -i /opt/code/git/openvcloudEnvironments/poc/keys/git_root
+ssh 10.54.16.7 -l root -A -p 2202 -i /opt/code/git/openvcloudEnvironments/poc/keys/git_root
 root@ovcgit:~#
 ```
 
+
 ## Accessing ovc_master from ovc_git
 
-The public IP address of ovc_master can be found on ovc_git in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__ovc_master`.
+The public IP address (instance.ip) of ovc_master can be found on ovc_git in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__ovc_master`.
 
 For instance for an environment with the name `poc`:
 ```
@@ -96,16 +98,17 @@ service.instance               = 'ovc_master'
 service.name                   = 'node.ssh'root@anotherubuntuserver:/opt/code/git/openvcloudEnvironments/poc/services/jumpscale__node.ssh__ovc_master#
 ```
 
-The ip address next to `instance.ip` is the one you need, in the above example 172.17.0.4.
+The ip address next to `instance.ip` is the one you need, in the above example that is 172.17.0.4.
 
 Connecting to ovc_master from ovc_git is simple then:
 ```
 ssh 172.17.0.4
 ```
 
+
 ### Accessing physical nodes from ovc_git
 
-Also the ip address of the physical nodes can be found on ovc_git in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__$name-of-physical-node$/service.hrd`.
+All ip addresses (instance.ip) of the physical nodes can be found on ovc_git in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__$name-of-physical-node$/service.hrd`.
 
 For instance for an physical node with the name `be-scale-1-01` in an environment with name `be-scale-1`:
 ```
