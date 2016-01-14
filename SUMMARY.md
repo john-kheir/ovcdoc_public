@@ -42,5 +42,5 @@
     * [Stress Testing](Testing/StressTesting/stress_tests.md)
       * [Setup the Stress Test Cloud Space with the Bootstrap script](Testing/StressTesting/bootstrap.md)
       * [Setup the Stress Test Virtual Machines with the Setup script](Testing/StressTesting/setup.md)
-      * [Running the Stress Tests](Testing/StressTesting/stress_tests.md)
+      * [Running the Stress Tests](Testing/StressTesting/run_stress_testing.md)
       * [Errors](Testing/StressTesting/errors.md)
