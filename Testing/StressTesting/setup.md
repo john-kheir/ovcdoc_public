@@ -8,12 +8,12 @@ The setup script is responsible for the creation of all the virtual machines nee
 
 The setup script needs to be run from the docker container hosted in the master virtual machine that got installed by the bootstrap script.
 
-Before connecting to the docker container, let's make sure `ssh-agent` is running, and that your SSH keys are added:
+From a well prepared computer, as documented [here](../../Sysadmin/preparing_for_indirect_access.md), before connecting to the docker container, let's make sure `ssh-agent` is running, and that your SSH keys are added:
 ```
 ssh-add -l
 ```
 
-If not:
+If not, when getting the error `Could not open a connection to your authentication agent.`:
 ```
 eval $(ssh-agent -s)
 ssh-add $HOME/.ssh/id_rsa
@@ -45,11 +45,7 @@ Again, remember to adapt the command to your environment:
 - Replace *'du-conv-2'* with the actual location name of the location, which can be looked up in the **Cloud Broker Portal** under **Locations**.
 - Add the total number of nodes after *'stacks'*  
 
-DON'T DO THIS, SINCE IT WILL ALSO DELETE THE SETUP.PY SCRIPT
-In case you have to re-run the setup.py script, you first need to do some cleanup:
-```
-rm -r /opt/code/git/0-complexity/ays_stresstest/*
-```
+When get time out errors, simply re-run the setup script, it will pick-up where it left.
 
 If everything went well a number of virtual machines will have been created:
 
