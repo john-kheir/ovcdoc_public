@@ -102,7 +102,7 @@ The ip address next to `instance.ip` is the one you need, in the above example t
 
 Connecting to ovc_master from ovc_git is simple then:
 ```
-ssh 172.17.0.4
+ssh 172.17.0.4 -A
 ```
 
 
