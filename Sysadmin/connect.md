@@ -5,9 +5,9 @@
 ![](AdminArchitecture.png)
 
 The core of an OpenvCloud environment is the **master cloud space**, which consist of the following docker containers:
-- ovc_git - holding all configuration of your environment
-- ovc_master - controlling the environment based on information from ovc_git
-- ovc_proxy - runs nginx as a proxy for all port 80 and port 443 communications
+- **ovc_git** holding all configuration of your environment
+- **ovc_master** controlling the environment based on information from ovc_git
+- **ovc_proxy** running nginx as a proxy for all port 80 and port 443 communications
 
 The master cloud space and its containers can run locally, close to the actual OpenvCloud physical nodes it controls or remotely, for instance in another OpenvCloud environment, such as at mothership1.com.
 
@@ -19,8 +19,8 @@ On the ovc_git docker container of your environment this git repository is clone
 
 So in order to access you OpenvCloud environment you have two options, get direct or indirect access to the git repository:
 
-- Direct access requires that you know the credentials for opening an SSH connection to ovc_git
-- Indirect access (recommended) requires that have the AYDO credentials in order to first clone the git repository of your local machine, in order get to the the keys to access ovc_git and all other docker containers, and update the configuration, which you will be pushing back to the central repository at AYDO, from where they get in turn pulled to ovc_git.
+- **Direct access** requires that you know the credentials for opening an SSH connection to ovc_git
+- **Indirect access** (recommended) requires that have the AYDO credentials in order to first clone the git repository of your local machine, providing you  the keys to access ovc_git and all other docker containers in the master cloud space, and update the configuration, which you will be pushing back to the central repository at AYDO, from where it gets in turn pulled to ovc_git, making your changes effective.
 
 
 ## Accessing ovc_git indirectly
