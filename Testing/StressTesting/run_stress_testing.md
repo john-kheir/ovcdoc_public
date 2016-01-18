@@ -4,9 +4,20 @@ This script is the actual stress tests.
 
 It uses the AYS node created by the setup script to know about the environment.
 
+From a well prepared computer, as documented [here](../../Sysadmin/preparing_for_indirect_access.md), before connecting to the docker container, let's make sure `ssh-agent` is running, and that your SSH keys are added:
+```
+ssh-add -l
+```
+
+If not, when getting the error `Could not open a connection to your authentication agent.`:
+```
+eval $(ssh-agent -s)
+ssh-add $HOME/.ssh/id_rsa
+```
+
 Connect to the docker container, using the public IP address of your stress test cloud space, password is gig1234:
 ```
-ssh root@192.168.28.51 -p 2201
+ssh root@192.168.28.51 -A -p 2201
 ```
 
 To start the stress test, just execute the following command:   

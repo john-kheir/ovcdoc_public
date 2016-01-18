@@ -2,7 +2,7 @@
 
 Get access to the ovc_master docker of your environment.
 
-For instruction how to connect to ovc_master check the [How to Connect to an Environment](connect.md) documentation.
+For detailed instructions on how to connect to ovc_master check the [How to Connect to an Environment](connect.md) documentation.
 
 In summary:
 - Clone the git repository to your personal computer, check the [Preparing for indirect access to ovc_git](preparing_for_indirect_access.md) documentation for this

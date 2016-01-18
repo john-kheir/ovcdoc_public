@@ -1,39 +1,28 @@
 # Bootstrap the Stress Test Cloud Space
 
-This script needs to be performed only once per environment.
+The bootstrap script discussed below needs to be performed only once per environment.
 
 It will setup a new cloud space dedicated to testing the environment in which it is setup.
 
 Next to the new cloud space, also a new user and account will be created, both with the same name: system. Furthermore a virtual machine, named `master` will be created, in which a docker container will be started.  
 
-To bootstrap the stress test cloud space connect on any of the CPU nodes in the environment you are about to stress test.
+Your first step will be to **connect to any of the CPU nodes** of the environment you are about to stress.
 
-ALSO:
+For detailed instructions on how to connect to a cpu node check the [How to Connect to an Environment](connect.md) documentation.
 
-MAKE SURE YOU HAVE AN ACCOUNT ON GITLAB
+In summary:
+- Clone the git repository of your environment to your personal computer, check the [Preparing for indirect access to ovc_git](preparing_for_indirect_access.md) documentation for this
+- Connect to ovc_git:
+  ```
+  ssh $ip-address-of-master-cloud-space$ -l root -A -p 2202 -i /opt/code/git/openvcloudEnvironments/poc/keys/git_root
+  ```
+- On ovc_git lookup the ip address (instance.ip) of any (here i.e. node 1) of the CPU nodes in `service.hrd` of `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__be-conv-2-01`
+- From ovc_git connect over ssh, include the -A option:
+  ```
+  ssh $ip-address-of-the-cpu-node$ -A
+  ```
 
-On your personal computer, check:
-```
-ssh-add -l
-2048 8a:b5:04:35:ef:d6:65:a4:37:86:be:88:7d:3e:47:d0 rsa w/o comment (RSA)
-```
-
-From your personal computer, USE THE -A OPTION:
-```
-ssh 10.54.16.7 -A -l root -p 2202 -i keys/git_root
-```
-
-From ovc_git, AGAIN USE THE -A OPTION: :
-```
-ssh $ip-address-of-cpu-node$ -A
-```
-
-Don't the `ovce` script as documented in the [Connecting to an OpenvCloud environment using SSH](../../sysadmin/using_ssh.md) documentation, you can quickly connect for instance to the first node (node 1) of the `du-conv-2` environment, which we use in this documentation as the environment on which we will conduct the stress testing:
-```
-bash ovce du-conv-2-01
-```
-
-Make a directory in the root folder:
+Next, make a directory in the root folder:
 ````
 sudo -s
 mkdir performance
