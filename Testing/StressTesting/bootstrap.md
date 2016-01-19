@@ -16,8 +16,8 @@ In summary:
   ```
   ssh $ip-address-of-master-cloud-space$ -l root -A -p 2202 -i /opt/code/git/openvcloudEnvironments/poc/keys/git_root
   ```
-- On ovc_git lookup the ip address (instance.ip) of any (here i.e. node 1) of the CPU nodes in `service.hrd` of `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__be-conv-2-01`
-- From ovc_git connect over ssh, include the -A option:
+- On ovc_git lookup the ip address (instance.ip) of any of the CPU nodes (for instance node 1 in this example) in `service.hrd` of `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__node.ssh__be-conv-2-01`
+- From ovc_git connect over ssh, use the -A option:
   ```
   ssh $ip-address-of-the-cpu-node$ -A
   ```
@@ -44,15 +44,16 @@ Execute the bootstrap script, specifying the environment you are about to stress
 jspython bootstrap.py --url 'du-conv-2.demo.greenitglobe.com'
 ```
 
-This script will create a user and account called **system**, create a virtual machine called **master** in the default clouds pace of the system account.  
+This script will:
+- Create a user and account called **system**
+- Create a virtual machine called **master** in the default clouds pace of the system account
+- Install docker on the master virtual machine and start a docker container using the image https://github.com/Jumpscale/docker_ubuntu1510_python
 
-If you like to check all this in the **Cloud Broker Portal** using the following credentials:
+You can verify the result in the **Cloud Broker Portal** using the credentials of the newly created system user:
  * **Login**: system  
  * **Password**: gig1234
 
 ![](master.png)
-
-The bootstrap script also will install docker and start a docker container with the image https://github.com/Jumpscale/docker_ubuntu1510_python.
 
 Both the docker container and the `master` virtual machine hosting the docker container are accessible over SSH, for which following port forwardings have been configured by the bootstrap script:
 

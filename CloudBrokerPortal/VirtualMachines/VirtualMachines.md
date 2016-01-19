@@ -23,6 +23,7 @@ This table lists the virtual network interface cards (NIC) in the virtual machin
 
 ![](NIC.png)
 
+
 #### Disks
 
 In the **Disks** table all the virtual disks attached to the virtual machine are listed:
@@ -32,6 +33,7 @@ In the **Disks** table all the virtual disks attached to the virtual machine are
 With the **+ Create Disks** link you can easily add disks:
 
 ![](AddDisk.png)
+
 
 #### Snapshots
 

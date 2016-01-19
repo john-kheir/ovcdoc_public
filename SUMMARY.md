@@ -32,6 +32,7 @@
   * [Defense Shield](EndUserPortal/DefenseShield/DefenseShield.md)
   * [Consumption](EndUserPortal/Consumption/Consumption.md)
   * [Machine API](EndUserPortal/MachineAPI/MachineAPI.md)
+* [Installation]
 * [System Administration](Sysadmin/sysadmin.md)
    * [Connect to an Environment](Sysadmin/connect.md)
    * [Preparing for Indirect Access to ovc_git](Sysadmin/preparing_for_indirect_access.md)
