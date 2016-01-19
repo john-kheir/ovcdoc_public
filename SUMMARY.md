@@ -32,7 +32,9 @@
   * [Defense Shield](EndUserPortal/DefenseShield/DefenseShield.md)
   * [Consumption](EndUserPortal/Consumption/Consumption.md)
   * [Machine API](EndUserPortal/MachineAPI/MachineAPI.md)
-* [Installation]
+* [Installation](Installation/Installation.md)
+  * [Installation of the OpenvCloud Nodes](Installation/OVC_Node.md)
+  * [Configuration of Open vStorage](Installation/OVS.md)
 * [System Administration](Sysadmin/sysadmin.md)
    * [Connect to an Environment](Sysadmin/connect.md)
    * [Preparing for Indirect Access to ovc_git](Sysadmin/preparing_for_indirect_access.md)
