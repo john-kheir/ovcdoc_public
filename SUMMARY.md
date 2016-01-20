@@ -41,6 +41,8 @@
    * [OpenvCloud File Locations](Sysadmin/file_locations.md)
    * [How to customize the body of the resend password e-mail](Sysadmin/customize_reset_password_email.md)
    * [Deploy a New Image](Sysadmin/deploy_new_image.md)
+   * [Putting a Node in Maintenance Mode](Sysadmin/Maintenance/putting_node_in_maintenance_mode.md)
+   * [Decommission a Node](Sysadmin/Decommission/decommission_node.md)
 * [Testing](Testing/Testing.md)
   * [Stress Testing](Testing/StressTesting/stress_tests.md)
     * [Setup the Stress Test Cloud Space with the Bootstrap script](Testing/StressTesting/bootstrap.md)
