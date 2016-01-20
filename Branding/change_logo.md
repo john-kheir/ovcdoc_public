@@ -2,7 +2,8 @@
 
 Can be accomplished by replacing four files on **ovc_master**.
 
-For the Open vStorage Portal another three files need to be replaced on all CPU nodes:
+For the Open vStorage Portal another three files need to be replaced on all CPU nodes.
+
 
 ## Login
 
