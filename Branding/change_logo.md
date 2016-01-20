@@ -1,6 +1,11 @@
 # How to change logo on Cloud Broker and End User Portals
 
-Can be accomplished by replacing three files, all on **ovc_master**.
+Can be accomplished by replacing four files, all on **ovc_master**.
+
+## Login
+
+On **ovc_master** replace the file `logo.png` in the directory:
+`/opt/code/git/binary/openvcloud/apps/oauthserver/html`
 
 
 ## Cloud Broker Portals
