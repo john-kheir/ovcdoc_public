@@ -1,12 +1,14 @@
 # Setup the Stress Test Virtual Machines
 
-Also this step needs to be performed only once per environment.
+This step can be performed multiple times per environment.
 
-Make sure to have first setup the stress test cloud space, using the [Bootstrap](bootstrap.md) script.
+Make sure to have first setup the Stress Test Cloud Space, using the [Bootstrap](bootstrap.md) script.
 
-The setup script is responsible for the creation of all the virtual machines needed for the tests. On each node a virtual machine will be deployed, including the application needed for the performance test.
+The next step will be to the creation of all the virtual machines needed for the tests. On each node a virtual machine will be deployed, including the application needed for the performance test.
 
 The setup script needs to be run from the docker container hosted in the master virtual machine that got installed by the bootstrap script.
+
+The virtual machines can be created in any cloud space you choose, just make sure that the system account (created by the bootstrap script) has access administrative access to you cloud space.
 
 From a well prepared computer, as documented [here](../../Sysadmin/preparing_for_indirect_access.md), before connecting to the docker container, let's make sure `ssh-agent` is running, and that your SSH keys are added:
 ```
@@ -39,6 +41,8 @@ Now your are ready to run the actual installation script. The below command is f
 cd /opt/code/git/0-complexity/ays_stresstest/scripts
 jspython setup.py --url du-conv-2.demo.greenitglobe.com --login system --password gig1234 --location du-conv-2 --cloudspace default --stacks 1,2,3,4
 ```
+
+Alternatively you can also specify `--stacks 1-4` instead.
 
 Again, remember to adapt the command to your environment:
 - Replacing *'du-conv-2.demo.greenitglobe.com'* with the url of the environment you want to perform the test on.

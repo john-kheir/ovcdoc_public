@@ -26,6 +26,15 @@ cd /opt/code/git/0-complexity/ays_stresstest/scripts
 jspython perf.py
 ```
 
+When running the script for the first time it will take longer to execute, since it also mounts all virtual disks.
+
+For best results you should run it twice.
+
+While running use the `status.py`script in order to check wether it is actually still running on each node:
+```
+jspython ../status.py
+```
+
 If there is an error on the SSH connection then add the following command:
 ````
 eval $(ssh-agent -s)
@@ -39,8 +48,8 @@ In case of `du-conv-2` goto https://ovs-du-conv-2.demo.greenitglobe.com
 
 # Test performed
 
-Actually, the perftest scripts runs:
-- All tests on each cpunode (stack) from the environment
+Actually, the performance test scripts runs:
+- All tests on each CPU node (stack) from the environment
 - The scripts runs test in this order:
   - Initial write
   - Re-write
