@@ -45,26 +45,40 @@ Make sure the cloned keys file is protected, not accessible to other users, it s
 chmod 600 be-scale-1/keys/git_root
 ```
 
-So you have the keys, the ip address (instance.public.address) is often (but not allways) the same as the one that can be found in `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__docker_client__main`.
+So you have the keys... next you will need the IP address of ovc_git.
+
+The ip address (instance.public.address) is often (but not allways) the same as the one that can be found in the service.hrd of
+
+`/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/openvcloud__git_vm__main`
+
+or
+
+ `/opt/code/git/openvcloudEnvironments/$name-of-your-env$/services/jumpscale__docker_client__main`.
 
 Since this address could be different, it's recommended to check with the administrator.
 
 So, for instance for an environment with the name `poc`:
 ```
-cd /opt/code/git/openvcloudEnvironments/poc/services/jumpscale__docker_client__main
+cd /opt/code/git/openvcloudEnvironments/poc/services/openvcloud__git_vm__main
 cat service.hrd
-instance.image.base            = 'openvcloud/2016-01-07'
-instance.public.address        = '10.54.16.7'
-instance.remote.host           = '172.17.0.1'
-instance.remote.port           = '2375'
+instance.param.ip              = '185.69.164.120'
+instance.param.recovery.passwd = '1piQpVVt6z4U'
 
-service.domain                 = 'jumpscale'
-service.installed.checksum     = '144240a95f6e30ecaa387133a3a6d2d4'
+service.domain                 = 'openvcloud'
+service.installed.checksum     = '87c2cf956d752bb9f9a8e485c383c39a'
 service.instance               = 'main'
-service.name                   = 'docker_client'
+service.name                   = 'git_vm'
 ```
 
 In order to connect to `ovc_git`, using the git_root identity file (-i) for this environment, and including the -A option (best practice):
+
+```
+ssh root@185.69.164.120 -A -i /opt/code/git/openvcloudEnvironments/poc/keys/git_root
+root@ovcgit:~#
+```
+
+Or in case ovc_git runs in a git container:
+
 ```
 ssh 10.54.16.7 -l root -A -p 2202 -i /opt/code/git/openvcloudEnvironments/poc/keys/git_root
 root@ovcgit:~#

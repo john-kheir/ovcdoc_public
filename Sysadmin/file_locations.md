@@ -5,7 +5,7 @@
 
 All important files are located in the directory `/opt`.
 
-Under `\opt` there are at least two sub directories:
+Under `/opt` there are at least two sub directories:
 - `/opt/jumpscale7`- containing all files related to the JumpScale platform and the locally installed applications
 - `/opt/code` - containing all Git repositories that have been cloned on the machine
 
@@ -15,27 +15,24 @@ Under `opt/code/` there are always two sub directories:
 
 Under `opt/code/git/`:
 ```
-root@be-scale-1-01:/opt/code/git# ls -1
 0-complexity
 binary
 ```
 
 Under `opt/code/git/0-complexity`:
 ```
-root@be-scale-1-01:/opt/code/git/0-complexity# ls -1
 openvcloud
 openvcloud_ays
 ```
 
 Under `opt/code/github`:
 ```
-root@be-scale-1-01:/opt/code/github/jumpscale# ls -1
 ays_jumpscale7
 jumpscale_core7
 jumpscale_portal
 ```
 
-Depending on the role of the the machine more directories and sub directories exist.
+Depending on the role of the machine more directories and sub directories exist.
 
 In what follows we will provide more details for each of the below roles:
 
@@ -45,6 +42,7 @@ In what follows we will provide more details for each of the below roles:
 - ovc_reflector
 - ovc_dcpm
 - ovc_proxy
+
 
 ## Files on physical node
 
@@ -199,7 +197,67 @@ Since there are typically no services running locally on ovc_git:
 
 ## Files on ovc_master
 
-(@TODO)
+Under `/opt/jumpscale7` there is the sub directory `/opt/jumpscale7/hrd/apps` containing all configuration files of the locally installed applications:
+
+```
+root@ovcmaster:/opt/jumpscale7/hrd/apps# ls -1
+jumpscale__agentcontroller__main
+jumpscale__agentcontroller_client__main
+jumpscale__base__main
+jumpscale__grafana__main
+jumpscale__grafana_client__main
+jumpscale__gridportal__main
+jumpscale__influxdb__main
+jumpscale__influxdb_client__main
+jumpscale__jsagent__main
+jumpscale__mailclient__main
+jumpscale__mongodb__main
+jumpscale__mongodb_client__main
+jumpscale__nginx__main
+jumpscale__nodejs__main
+jumpscale__oauth_client__oauth
+jumpscale__osis__main
+jumpscale__osis_client__jsagent
+jumpscale__osis_client__main
+jumpscale__osis_eve__main
+jumpscale__portal__main
+jumpscale__portal_client__cloudbroker
+jumpscale__portal_client__main
+jumpscale__portal_lib__main
+jumpscale__python-cloudlibs__main
+jumpscale__redis__system
+jumpscale__singlenode_grid__main
+jumpscale__singlenode_portal__main
+jumpscale__statsd-collector__main
+jumpscale__statsd-master__main
+jumpscale__web__main
+openvcloud__billingengine__main
+openvcloud__billingenginelib__main
+openvcloud__cb_master_aio__main
+openvcloud__cbportal__main
+openvcloud__cloudbroker__main
+openvcloud__cloudbroker_jumpscripts__main
+openvcloud__cloudbroker_model__main
+openvcloud__cloudbrokerlib__main
+openvcloud__libcloudlibvirt__main
+openvcloud__libvirtsizes__main
+openvcloud__ms1_frontend__main
+openvcloud__oauthserver__main
+openvcloud__portal_branding__main
+openvcloud__vfwmanager__main
+```
+
+Next to `/opt/jumpscale7` and `/opt/code` following sub directories exist under `/opt/`:
+- grafana
+- influxdb
+- mongodb
+- nginx
+- nodejs
+- OpenvStorage
+- statsd-collector
+- stats-master
+
+...
 
 
 ## Files on ovc_reflector
