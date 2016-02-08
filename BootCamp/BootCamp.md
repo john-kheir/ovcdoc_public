@@ -2,7 +2,7 @@
 
 [Introduction](GettingStarted/GettingStarted.md)
 
-[Installing Linux server on a virtual machine locally, hosted locally with VirtualBox](GettingStarted/VirtualBox/VirtualBox.md)
+[Installing Linux server on a local virtual machine, hosted locally with VirtualBox](GettingStarted/VirtualBox/VirtualBox.md)
 
 [Creating a virtual machine running Linux, hosted online at Mothership1.com](GettingStarted/Mothership1/Mothership1.md)
 
