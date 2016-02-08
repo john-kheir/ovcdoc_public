@@ -52,4 +52,4 @@
 * [Branding](Branding/Branding.md)
   * [How to Change Logo on Portals](Branding/change_logo.md)
 * [Bootcamp](BootCamp/BootCamp.md)
-  * [Getting Started](GettingStarted/GettingStarted.md)
+  * [Getting Started](BootCamp/GettingStarted/GettingStarted.md)
