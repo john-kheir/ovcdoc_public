@@ -51,5 +51,5 @@
     * [Errors](Testing/StressTesting/errors.md)
 * [Branding](Branding/Branding.md)
   * [How to Change Logo on Portals](Branding/change_logo.md)
-* [Bootcamp](BootCamp/BootCamp.md)
+* [Boot Camp](BootCamp/BootCamp.md)
   * [Getting Started](BootCamp/GettingStarted/GettingStarted.md)
