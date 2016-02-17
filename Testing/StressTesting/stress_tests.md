@@ -8,4 +8,4 @@ The installation of the stress test is done in two steps, using two scripts:
 
 Once setup, you will want to conduct the actual stress tests: [Running the stress tests](run_stress_testing.md).
 
-When running into problems, check the section about [Errors](errors.md).  
+When running into problems check the section about [Errors](errors.md).  
