@@ -8,10 +8,10 @@ Next to the new cloud space, also a new user and account will be created, both w
 
 Your first step will be to **connect to any of the CPU nodes** of the environment you are about to stress.
 
-For detailed instructions on how to connect to a cpu node check the [How to Connect to an Environment](https://gig.gitbooks.io/ovcdoc_internal/content/sysadmin/connect.html) documentation.
+For detailed instructions on how to connect to a cpu node check the [How to Connect to an Environment](../../Sysadmin/connect.md) documentation.
 
 In summary:
-- Clone the git repository of your environment to your personal computer, check the [Preparing for indirect access to ovc_git](preparing_for_indirect_access.md) documentation for this
+- Clone the git repository of your environment to your personal computer, check the [Preparing for indirect access to ovc_git](../../Sysadmin/preparing_for_indirect_access.md) documentation for this
 - Connect to ovc_git:
   ```
   ssh $ip-address-of-master-cloud-space$ -l root -A -p 2202 -i /opt/code/git/openvcloudEnvironments/poc/keys/git_root
@@ -51,7 +51,7 @@ This script will:
 
 You can verify the result in the **Cloud Broker Portal** using the credentials of the newly created system user:
  * **Login**: system  
- * **Password**: gig1234
+ * **Password**: stresstest1234
 
 ![](master.png)
 
