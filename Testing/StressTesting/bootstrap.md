@@ -8,7 +8,7 @@ Next to the new cloud space, also a new user and account will be created, both w
 
 Your first step will be to **connect to any of the CPU nodes** of the environment you are about to stress.
 
-For detailed instructions on how to connect to a cpu node check the [How to Connect to an Environment](connect.md) documentation.
+For detailed instructions on how to connect to a cpu node check the [How to Connect to an Environment](https://gig.gitbooks.io/ovcdoc_internal/content/sysadmin/connect.html) documentation.
 
 In summary:
 - Clone the git repository of your environment to your personal computer, check the [Preparing for indirect access to ovc_git](preparing_for_indirect_access.md) documentation for this
