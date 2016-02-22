@@ -59,6 +59,14 @@ Both the docker container and the `master` virtual machine hosting the docker co
 
 ![](PortForwardings.png)
 
+You will be requested a password for the following
+```
+run: js "j.do.pullGitRepo(url='https://git.aydo.com/0-complexity/ays_stresstest.git')"
+```
+The Login password for 'root'
+
+* **Password**: gig1234
+
 In the very end you will be required to enter your "git.aydo.com" user name and password.
 
 When the script is done you should see the following message, inviting you to go to the next step, running the [Setup](setup.md) script:
