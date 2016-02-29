@@ -68,6 +68,6 @@ iozone -i 0 -i 1 -R -s 1000M -I -k -l 5 -r 256k -t 3 -T -F ... -F ... -F ... -F 
 
 The actual stress test is done with [iozone3](http://www.iozone.org/).  
 
-If you want to create a new test, go the to [PerfTestTools.py]( https://github.com/Jumpscale/jumpscale_core7/blob/master/lib/JumpScale/lib/perftesttools/PerfTestTools.py) and implement a new method in this class.
+If you want to create a new test, go the to [PerfTestTools.py]( https://github.com/jumpscale7/jumpscale_core7/blob/master/lib/JumpScale/lib/perftesttools/PerfTestTools.py) and implement a new method in this class.
 
 Then call the method from the [perf.py script](https://git.aydo.com/0-complexity/ays_stresstest/blob/master/scripts/perf.py)
