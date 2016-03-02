@@ -45,7 +45,7 @@ Once rebooted connect again to the CPU node and fetch the node.sh script from AY
 
 Unfortunately you can not simply curl this script into your environment yet because of the authentication, so navigate to the link, then copy and paste (vi) the content into your node:
 ```
-curl https://git.aydo.com/0-complexity/openvcloud/raw/master/scripts/install/node.sh > /tmp/node.sh
+curl https://github.com/0-complexity/openvcloud/raw/master/scripts/install/node.sh > /tmp/node.sh
 . /tmp/node.sh
 ```
 
@@ -72,7 +72,7 @@ export JSBRANCH="7.0.2a"; export AYSBRANCH="7.0.2a" ; export OVCBRANCH="2.0.2a" 
 
 ```
 ```
-curl https://git.aydo.com/0-complexity/openvcloud/raw/master/scripts/install/pre-install.sh > /tmp/pre-install.sh
+curl https://github.com/0-complexity/openvcloud/raw/master/scripts/install/pre-install.sh > /tmp/pre-install.sh
 bash /tmp/pre-install.sh $REMOTEHOST
 ```
 
