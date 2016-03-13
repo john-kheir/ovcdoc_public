@@ -15,7 +15,7 @@ In the **Process Status** section you get an overview of the health based on the
 
 Clicking the **Details** link brings you to a detailed status view for the selected node:
 
-![[]](StatusOverviewdetails.png)
+![[]](MonitoringStatusDetails.png)
 
 Clicking **Run Health Check on Node** will schedule several health check jobs as you can verify on the **Jobs** page:
 
