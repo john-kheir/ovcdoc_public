@@ -1,5 +1,7 @@
 # Create your first actor
 
+As a starter it is recommended to first read the [How to create your first actor](https://gig.gitbooks.io/jumpscale8/content/Portal/Howto/How-to-create-your-first-actor.html) section in the [JumpScale8](https://www.gitbook.com/book/gig/jumpscale8/details) public documentation.
+
 For each actor you need to create sub directory in the `./base` directory, in the same directory where you create a directory per wiki space.
 
 The name of this directory needs to be `<appname>__<actorname>`, and should include a sub director `.actor`, all other files and directories get generated automatically.
@@ -23,7 +25,7 @@ First rename the file `_example__Actor.spec` to any name of your choice, such as
 Let's change the code:
 
 ```
-[actor] @dbtype:mem,redis,fs
+[actor]
 	"""
 	this is an example actor
 	"""
