@@ -4,11 +4,11 @@ On the **Status Overview** page you get an immediate view on the health of the s
 
 You can access the **Status Overview** page in two ways:
 
-- By clicking the status dot in the top navigation bar:
+- By clicking the green/orange/red status dot in the top navigation bar:
 	
 ![](TopNavigation.png)
 	
-- Via left navigation bar, under Grid Portal click Status Overview:
+- Via the left navigation bar, under **Grid Portal** click **Status Overview**:
 
 ![](LeftNavigation.png)
 
@@ -24,8 +24,7 @@ Clicking **Run Health Check on Node** will schedule several health check jobs as
 
 ![[]](Jobs.png)
 
-
-On the **Status Overview Details** page you can see more details by clicking the various:
+On the **Status Overview Details** page you can see more details by clicking the various section titles:
 
 **AYS Process**
 
