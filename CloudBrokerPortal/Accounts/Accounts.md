@@ -70,7 +70,7 @@ Note that you will have to specify at least one username to grant access.
 
 From the list with cloud spaces you can navigate to the **Cloud Space Details** pages.
 
-For more information on **Cloud Spaces** goto the [Cloud Spaces](CloudSpaces/CloudSpaces.md) documentation.
+For more information on **Cloud Spaces** goto the [Cloud Spaces](../CloudSpaces/CloudSpaces.md) documentation.
 
 
 
