@@ -64,7 +64,7 @@ On the **Status Overview Details** page you can see more details by clicking the
 
 **Orphanage**
 
-Here you get an overview of all "orphane" virtual machines, which are virtual machines that actually don't exist anymore, but still appear in the portal pages.
+Here you get an overview of all "orphane" virtual machines. Those vm's are marked as destroyed on the portal but still exist in reality on the physical node.
 
 This is obviously unwanted, and as part of automatic healthchecks, "orphane" virtual machines will get removed.
 
