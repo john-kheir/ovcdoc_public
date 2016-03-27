@@ -71,10 +71,11 @@ This is obviously unwanted, and as part of automatic healthchecks, "orphane" vir
 In order to manually remove "orphane" virtual machines use the following commands at the command prompt:
 
 ````shell
-disks="$(virsh dumpxml vm-8 | grep 'source file' | cut -d "'" -f 2)"
-virsh destroy vm-8
+vm="vm-8"
+disks="$(virsh dumpxml $vm | grep 'source file' | cut -d "'" -f 2)"
+virsh destroy $vm; virsh undefine $vm
 rm $disks
-rm -rf /mnt/vmstor/vm-8
+rm -rf /mnt/vmstor/$vm
 ````
 
 ![[]](Orphanage.png)
