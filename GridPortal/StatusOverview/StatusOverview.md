@@ -68,7 +68,7 @@ Here you get an overview of all "orphane" virtual machines. Those vm's are marke
 
 This is obviously unwanted, and as part of automatic healthchecks, "orphane" virtual machines will get removed.
 
-In order to manually remove "orphane" virtual machines use the following commands at the command prompt:
+In order to manually remove "orphane" virtual machines use the following commands at the commandline of the physical machine where the orphane virtual machine exists:
 
 ````shell
 vm="vm-8"
