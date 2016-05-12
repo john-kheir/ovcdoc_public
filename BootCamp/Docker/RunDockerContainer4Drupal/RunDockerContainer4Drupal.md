@@ -1,4 +1,4 @@
-# Run Docker Container for hosting Drupal sites
+# Run Docker container for hosting Drupal sites
 
 * Set your current Docker Machine to the Docker Machine created in the previous section:
 
